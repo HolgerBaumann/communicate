@@ -1,4 +1,4 @@
-<?php namespace Zainab\SimpleContact\Models;
+<?php namespace HolgerBaumann\SimpleContact\Models;
 
 use Model;
 
@@ -24,7 +24,7 @@ class SimpleContact extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'zainab_simplecontact_contact';
+    public $table = 'holgerbaumann_simplecontact_contact';
 
     /**
      * The attributes that should be casted to native types.

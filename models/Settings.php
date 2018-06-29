@@ -1,5 +1,5 @@
 <?php
-namespace Zainab\SimpleContact\Models;
+namespace HolgerBaumann\SimpleContact\Models;
 
 use Model;
 use Cms\Classes\Theme;
@@ -10,7 +10,7 @@ class Settings extends Model
     public $implement = ['System.Behaviors.SettingsModel'];
 
     // A unique code
-    public $settingsCode = 'zainab_simple_contact_settings';
+    public $settingsCode = 'holgerbaumann_simple_contact_settings';
 
     // Reference to field configuration
     public $settingsFields = 'fields.yaml';

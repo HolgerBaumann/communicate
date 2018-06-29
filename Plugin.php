@@ -1,16 +1,16 @@
-<?php namespace Zainab\SimpleContact;
+<?php namespace HolgerBaumann\SimpleContact;
 
 use System\Classes\PluginBase;
 use Backend;
-use Zainab\SimpleContact\Controllers\SimpleContact;
+use HolgerBaumann\SimpleContact\Controllers\SimpleContact;
 class Plugin extends PluginBase
 {
 
     public function pluginDetails()
     {
         return [
-            'name'        => 'zainab.simplecontact::lang.plugin.name',
-            'description' => 'zainab.simplecontact::lang.plugin.description',
+            'name'        => 'holgerbaumann.simplecontact::lang.plugin.name',
+            'description' => 'holgerbaumann.simplecontact::lang.plugin.description',
             'author'      => 'Jawad',
             'icon'        => 'icon-envelope'
         ];
@@ -24,7 +24,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Zainab\SimpleContact\Components\SimpleContact' => 'simpleContact'
+            'HolgerBaumann\SimpleContact\Components\SimpleContact' => 'simpleContact'
         ];
     }
 
@@ -35,8 +35,8 @@ class Plugin extends PluginBase
                 'label'       => 'Simple Contact',
                 'icon'        => 'icon-envelope',
                 'description' => 'Manage Settings.',
-                'class'       => 'Zainab\SimpleContact\Models\Settings',
-                'permissions' => ['zainab.simplecontact.manage_settings'],
+                'class'       => 'HolgerBaumann\SimpleContact\Models\Settings',
+                'permissions' => ['holgerbaumann.simplecontact.manage_settings'],
                 'order'       => 60
             ]
         ];
@@ -45,18 +45,18 @@ class Plugin extends PluginBase
     public function registerNavigation(){
         return [
             'main-menu-item' => [
-                'label'       => 'zainab.simplecontact::lang.simplecontact.mainmenu',
-                'url'         => Backend::url('zainab/simplecontact/simplecontact'),
+                'label'       => 'holgerbaumann.simplecontact::lang.simplecontact.mainmenu',
+                'url'         => Backend::url('holgerbaumann/simplecontact/simplecontact'),
                 'icon'        => 'icon-envelope',
-                'permissions' => ['zainab.simplecontact.inbox'],
+                'permissions' => ['holgerbaumann.simplecontact.inbox'],
 
 
                 'sideMenu' => [
                     'side-menu-item' => [
-                        'label'       => 'zainab.simplecontact::lang.simplecontact.submenu',
+                        'label'       => 'holgerbaumann.simplecontact::lang.simplecontact.submenu',
                         'icon'        => 'icon-inbox',
-                        'url'         => Backend::url('zainab/simplecontact/simplecontact'),
-                        'permissions' => ['zainab.simplecontact.inbox'],
+                        'url'         => Backend::url('holgerbaumann/simplecontact/simplecontact'),
+                        'permissions' => ['holgerbaumann.simplecontact.inbox'],
                         'counter'     => SimpleContact::countUnreadMessages(),
                         'counterLabel' => 'Un-Read Messages'
                     ]
@@ -70,17 +70,17 @@ class Plugin extends PluginBase
     public function registerMailTemplates()
     {
         return [
-            'zainab.simplecontact::mail.reply' => 'Simple Contact -- reply message',
-            'zainab.simplecontact::mail.auto-response' => 'Simple Contact -- auto response message',
-            'zainab.simplecontact::mail.notification' => 'Simple Contact -- notification mail',
+            'holgerbaumann.simplecontact::mail.reply' => 'Simple Contact -- reply message',
+            'holgerbaumann.simplecontact::mail.auto-response' => 'Simple Contact -- auto response message',
+            'holgerbaumann.simplecontact::mail.notification' => 'Simple Contact -- notification mail',
         ];
     }
 
     public function registerReportWidgets()
     {
         return [
-            'Zainab\SimpleContact\ReportWidgets\MessageReport' => [
-                'label'   => 'zainab.simplecontact::lang.widget.label',
+            'HolgerBaumann\SimpleContact\ReportWidgets\MessageReport' => [
+                'label'   => 'holgerbaumann.simplecontact::lang.widget.label',
                 'context' => 'dashboard'
             ],
         ];

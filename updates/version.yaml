@@ -1,11 +1,11 @@
 1.0.1:
     - 'Initialize plugin.'
 1.0.2:
-    - 'Created table zainab_simplecontact_contact'
-    - builder_table_create_zainab_simplecontact_contact.php
+    - 'Created table holgerbaumann_simplecontact_contact'
+    - builder_table_create_holgerbaumann_simplecontact_contact.php
 1.0.3:
-    - 'Updated table zainab_simplecontact_contact'
-    - builder_table_update_zainab_simplecontact_contact.php
+    - 'Updated table holgerbaumann_simplecontact_contact'
+    - builder_table_update_holgerbaumann_simplecontact_contact.php
 1.0.4:
     - 'Change Alias bug fixed'
 1.0.5:
@@ -28,4 +28,4 @@
 2.0.2:
     - 'Languages Added (Czech, Turkish)'
 2.0.3:
-    - 'Language Added (French), fixed punctuation'    
+    - 'Language Added (French), fixed punctuation'

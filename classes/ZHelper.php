@@ -1,6 +1,6 @@
 <?php
 
-namespace Zainab\SimpleContact\Classes;
+namespace HolgerBaumann\SimpleContact\Classes;
 
 
 class ZHelper

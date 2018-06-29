@@ -1,10 +1,10 @@
-<?php namespace Zainab\SimpleContact\Controllers;
+<?php namespace HolgerBaumann\SimpleContact\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 use Backend\Facades\Backend;
-use Zainab\SimpleContact\Classes\ZHelper;
-use Zainab\SimpleContact\Models\SimpleContact as SimpleContactModel;
+use HolgerBaumann\SimpleContact\Classes\ZHelper;
+use HolgerBaumann\SimpleContact\Models\SimpleContact as SimpleContactModel;
 use October\Rain\Support\Facades\Flash;
 use Illuminate\Support\Facades\Redirect;
 use Mail;
@@ -13,7 +13,7 @@ use ValidationException;
 use System\Classes\SettingsManager;
 class SimpleContact extends Controller
 {
-    public $requiredPermissions = ['zainab.simplecontact.inbox'];
+    public $requiredPermissions = ['holgerbaumann.simplecontact.inbox'];
     
     public $implement = ['Backend\Behaviors\ListController'];
 
@@ -24,9 +24,9 @@ class SimpleContact extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Zainab.SimpleContact', 'main-menu-item');
+        BackendMenu::setContext('HolgerBaumann.SimpleContact', 'main-menu-item');
 
-        SettingsManager::setContext('Zainab.SimpleContact', 'simplecontact');
+        SettingsManager::setContext('HolgerBaumann.SimpleContact', 'simplecontact');
     }
 
 
@@ -98,14 +98,14 @@ class SimpleContact extends Controller
         if($record){
 
             $record->delete();
-            Flash::success(e(trans('zainab.simplecontact::lang.simplecontact.message_delete_success')));
+            Flash::success(e(trans('holgerbaumann.simplecontact::lang.simplecontact.message_delete_success')));
         }
         else{
-            Flash::error(e(trans('zainab.simplecontact::lang.simplecontact.message_delete_error')));
+            Flash::error(e(trans('holgerbaumann.simplecontact::lang.simplecontact.message_delete_error')));
         }
 
 
-        return Redirect::to(Backend::url('zainab/simplecontact/simplecontact'));
+        return Redirect::to(Backend::url('holgerbaumann/simplecontact/simplecontact'));
     }
 
     /**
@@ -133,7 +133,7 @@ class SimpleContact extends Controller
                 'message_body' => nl2br(post('message'))
             ];
 
-            Mail::send('zainab.simplecontact::mail.reply', $vars, function($message) {
+            Mail::send('holgerbaumann.simplecontact::mail.reply', $vars, function($message) {
 
                 $message->to(post('email_to'), post('name_to'));
                 $message->subject(post('subject'));
@@ -143,10 +143,10 @@ class SimpleContact extends Controller
             $record->is_replied = true;
             $record->save();
 
-            Flash::success(e(trans('zainab.simplecontact::lang.simplecontact.message_reply_success')));
+            Flash::success(e(trans('holgerbaumann.simplecontact::lang.simplecontact.message_reply_success')));
         }
         else {
-            Flash::error(e(trans('zainab.simplecontact::lang.simplecontact.message_reply_error')));
+            Flash::error(e(trans('holgerbaumann.simplecontact::lang.simplecontact.message_reply_error')));
         }
 
     }
@@ -163,18 +163,18 @@ class SimpleContact extends Controller
             $message->is_new = false;
             $message->save();
 
-            $this->addCss("/plugins/zainab/simplecontact/assets/css/backend-custom.css", "1.0.0");
-            $this->addCss("/plugins/zainab/simplecontact/assets/css/print-message.css", "media=\"print\"");
-            $this->addJs("/plugins/zainab/simplecontact/assets/js/printThis.js");
-            $this->addJs("/plugins/zainab/simplecontact/assets/js/simpleContact.js");
+            $this->addCss("/plugins/holgerbaumann/simplecontact/assets/css/backend-custom.css", "1.0.0");
+            $this->addCss("/plugins/holgerbaumann/simplecontact/assets/css/print-message.css", "media=\"print\"");
+            $this->addJs("/plugins/holgerbaumann/simplecontact/assets/js/printThis.js");
+            $this->addJs("/plugins/holgerbaumann/simplecontact/assets/js/simpleContact.js");
 
             $this->pageTitle = "Message";
             $this->vars['message'] = $message;
             $this->vars['avatar'] = ZHelper::get_gravatar($message->email);
         }
         else{
-            Flash::error(e(trans('zainab.simplecontact::lang.simplecontact.message_not_found_error')));
-            return Redirect::to(Backend::url('zainab/simplecontact/simplecontact'));
+            Flash::error(e(trans('holgerbaumann.simplecontact::lang.simplecontact.message_not_found_error')));
+            return Redirect::to(Backend::url('holgerbaumann/simplecontact/simplecontact'));
         }
 
     }

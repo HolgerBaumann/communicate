@@ -1,9 +1,9 @@
-<?php namespace Zainab\SimpleContact\Components;
+<?php namespace HolgerBaumann\SimpleContact\Components;
 
 use Backend\Facades\Backend;
 use Cms\Classes\ComponentBase;
-use Zainab\SimpleContact\Models\Settings;
-use Zainab\SimpleContact\Models\SimpleContact as simpleContactModel;
+use HolgerBaumann\SimpleContact\Models\Settings;
+use HolgerBaumann\SimpleContact\Models\SimpleContact as simpleContactModel;
 use October\Rain\Support\Facades\Flash;
 use Validator;
 use AjaxException;
@@ -15,8 +15,8 @@ class SimpleContact extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'zainab.simplecontact::lang.plugin.name',
-            'description' => 'zainab.simplecontact::lang.component.description',
+            'name'        => 'holgerbaumann.simplecontact::lang.plugin.name',
+            'description' => 'holgerbaumann.simplecontact::lang.component.description',
 
         ];
     }
@@ -25,31 +25,31 @@ class SimpleContact extends ComponentBase
     {
         return [
             'nameTitle' => [
-                'title' => 'zainab.simplecontact::lang.component.name_title',
-                'description' => 'zainab.simplecontact::lang.component.name_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.name_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.name_description',
                 'default' => 'Full Name',
                 'type' => 'string',
                 'required' => true,
                 'validationMessage' => 'Title label required'
             ],
             'emailTitle' => [
-                'title' => 'zainab.simplecontact::lang.component.email_title',
-                'description' => 'zainab.simplecontact::lang.component.email_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.email_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.email_description',
                 'default' => 'Email',
                 'type' => 'string',
                 'required' => true,
                 'validationMessage' => 'Email label required'
             ],
             'phoneTitle' => [
-                'title' => 'zainab.simplecontact::lang.component.phone_title',
-                'description' => 'zainab.simplecontact::lang.component.phone_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.phone_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.phone_description',
                 'default' => 'Phone',
                 'type' => 'string'
 
             ],
             'subjectTitle' => [
-                'title' => 'zainab.simplecontact::lang.component.subject_title',
-                'description' => 'zainab.simplecontact::lang.component.subject_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.subject_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.subject_description',
                 'default' => 'Subject',
                 'type' => 'string',
                 'required' => true,
@@ -57,8 +57,8 @@ class SimpleContact extends ComponentBase
 
             ],
             'messageTitle' => [
-                'title' => 'zainab.simplecontact::lang.component.message_title',
-                'description' => 'zainab.simplecontact::lang.component.message_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.message_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.message_description',
                 'default' => 'Message',
                 'type' => 'string',
                 'required' => true,
@@ -66,8 +66,8 @@ class SimpleContact extends ComponentBase
 
             ],
             'buttonText' => [
-                'title' => 'zainab.simplecontact::lang.component.button_text',
-                'description' => 'zainab.simplecontact::lang.component.button_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.button_text',
+                'description' => 'holgerbaumann.simplecontact::lang.component.button_description',
                 'default' => 'Submit',
                 'type' => 'string',
                 'required' => true,
@@ -75,14 +75,14 @@ class SimpleContact extends ComponentBase
 
             ],
             'displayPhone' => [
-                'title' => 'zainab.simplecontact::lang.component.display_phone_field',
-                'description' => 'zainab.simplecontact::lang.component.display_phone_field_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.display_phone_field',
+                'description' => 'holgerbaumann.simplecontact::lang.component.display_phone_field_description',
                 'default' => true,
                 'type' => 'checkbox',
             ],
             'detailedErrors' => [
-                'title'       => 'zainab.simplecontact::lang.component.detailed_errors_field',
-                'description' => 'zainab.simplecontact::lang.component.detailed_errors_field_description',
+                'title'       => 'holgerbaumann.simplecontact::lang.component.detailed_errors_field',
+                'description' => 'holgerbaumann.simplecontact::lang.component.detailed_errors_field_description',
                 'default'     => false,
                 'type'        => 'checkbox',
             ],
@@ -118,7 +118,7 @@ class SimpleContact extends ComponentBase
      */
     public function onRun()
     {
-        $this->addJs('/plugins/zainab/simplecontact/assets/js/simpleContact-frontend.js');
+        $this->addJs('/plugins/holgerbaumann/simplecontact/assets/js/simpleContact-frontend.js');
         if(Settings::get('recaptcha_enabled', false))
             $this->addJs('https://www.google.com/recaptcha/api.js');
     }
@@ -132,11 +132,11 @@ class SimpleContact extends ComponentBase
          * Form validation
          */
         $customValidationMessages = [
-            'name.required' => trans('zainab.simplecontact::validation.custom.name.required'),
-            'email.required' => trans('zainab.simplecontact::validation.custom.email.required'),
-            'email.email' => trans('zainab.simplecontact::validation.custom.email.email'),
-            'subject.required' => trans('zainab.simplecontact::validation.custom.subject.required'),
-            'message.required' => trans('zainab.simplecontact::validation.custom.message.required'),
+            'name.required' => trans('holgerbaumann.simplecontact::validation.custom.name.required'),
+            'email.required' => trans('holgerbaumann.simplecontact::validation.custom.email.required'),
+            'email.email' => trans('holgerbaumann.simplecontact::validation.custom.email.email'),
+            'subject.required' => trans('holgerbaumann.simplecontact::validation.custom.subject.required'),
+            'message.required' => trans('holgerbaumann.simplecontact::validation.custom.message.required'),
         ];
         $formValidationRules = [
             'name' => 'required',
@@ -165,7 +165,7 @@ class SimpleContact extends ComponentBase
             $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".Settings::get('secret_key')."&response=".post('g-recaptcha-response')."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
             if($response['success'] == false)
             {
-                Flash::error(e(trans('zainab.simplecontact::validation.custom.reCAPTCHA.required')));
+                Flash::error(e(trans('holgerbaumann.simplecontact::validation.custom.reCAPTCHA.required')));
 
                 throw new AjaxException(['#simple_contact_flash_message' => $this->renderPartial('@flashMessage.htm')]);
             }
@@ -219,7 +219,7 @@ class SimpleContact extends ComponentBase
      * Send notification email
      */
     protected function sendNotificationMail($message_id){
-        $url_message = Backend::url('zainab/simplecontact/simplecontact/view/'.$message_id);
+        $url_message = Backend::url('holgerbaumann/simplecontact/simplecontact/view/'.$message_id);
         $vars = [
             'url_message' => $url_message,
             'name' => post('name'),
@@ -229,7 +229,7 @@ class SimpleContact extends ComponentBase
             'message_body' => post('message')
         ];
 
-        Mail::send('zainab.simplecontact::mail.notification', $vars, function($message) use ($vars) {
+        Mail::send('holgerbaumann.simplecontact::mail.notification', $vars, function($message) use ($vars) {
              $message->to(Settings::get('notification_email_address'));
              $message->replyTo($vars['email'], $vars['name']);
         });
@@ -248,7 +248,7 @@ class SimpleContact extends ComponentBase
             'message_body' => post('message')
         ];
 
-        Mail::send('zainab.simplecontact::mail.auto-response', $vars, function($message) {
+        Mail::send('holgerbaumann.simplecontact::mail.auto-response', $vars, function($message) {
 
             $message->to(post('email'), post('name'));
 

@@ -6,10 +6,10 @@
  * Time: 1:15 PM
  */
 
-namespace Zainab\SimpleContact\ReportWidgets;
+namespace HolgerBaumann\SimpleContact\ReportWidgets;
 
 use Backend\Classes\ReportWidgetBase;
-use Zainab\SimpleContact\Models\SimpleContact as simpleContactModel;
+use HolgerBaumann\SimpleContact\Models\SimpleContact as simpleContactModel;
 class MessageReport extends ReportWidgetBase
 {
 
@@ -17,17 +17,17 @@ class MessageReport extends ReportWidgetBase
     {
         return [
             'title' => [
-                'title'             => 'zainab.simplecontact::lang.widget.properties_title',
+                'title'             => 'holgerbaumann.simplecontact::lang.widget.properties_title',
                 'default'           => 'Contact Us Messages',
                 'type'              => 'string',
             ],
             'chart' => [
-                'title' => 'zainab.simplecontact::lang.widget.properties_chart',
+                'title' => 'holgerbaumann.simplecontact::lang.widget.properties_chart',
                 'type'        => 'dropdown',
                 'default'     => 'chart-bar',
                 'options'     => [
-                    'chart-bar'=> e(trans('zainab.simplecontact::lang.widget.properties_chart_option_bar')),
-                    'chart-pie'=> e(trans('zainab.simplecontact::lang.widget.properties_chart_option_pie'))
+                    'chart-bar'=> e(trans('holgerbaumann.simplecontact::lang.widget.properties_chart_option_bar')),
+                    'chart-pie'=> e(trans('holgerbaumann.simplecontact::lang.widget.properties_chart_option_pie'))
                 ]
             
             ]

@@ -1,15 +1,15 @@
 plugin:
-    name: 'zainab.simplecontact::lang.plugin.name'
-    description: 'zainab.simplecontact::lang.plugin.description'
-    author: Zainab
+    name: 'holgerbaumann.simplecontact::lang.plugin.name'
+    description: 'holgerbaumann.simplecontact::lang.plugin.description'
+    author: HolgerBaumann
     icon: oc-icon-envelope
     homepage: ''
 permissions:
-    zainab.simplecontact.inbox:
-        tab: 'zainab.simplecontact::lang.simplecontact.permission'
-        label: 'zainab.simplecontact::lang.simplecontact.permission_messages'
-    zainab.simplecontact.manage_settings:
-        tab: 'zainab.simplecontact::lang.simplecontact.permission'
-        label: 'zainab.simplecontact::lang.simplecontact.permission_settings'
+    holgerbaumann.simplecontact.inbox:
+        tab: 'holgerbaumann.simplecontact::lang.simplecontact.permission'
+        label: 'holgerbaumann.simplecontact::lang.simplecontact.permission_messages'
+    holgerbaumann.simplecontact.manage_settings:
+        tab: 'holgerbaumann.simplecontact::lang.simplecontact.permission'
+        label: 'holgerbaumann.simplecontact::lang.simplecontact.permission_settings'
 
 
