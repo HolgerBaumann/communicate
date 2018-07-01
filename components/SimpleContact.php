@@ -3,13 +3,13 @@
 use Backend\Facades\Backend;
 use Cms\Classes\ComponentBase;
 use HolgerBaumann\SimpleContact\Models\Settings;
-use HolgerBaumann\SimpleContact\Models\SimpleContact as simpleContactModel;
+use HolgerBaumann\SimpleContact\Models\Simplecontact as simpleContactModel;
 use October\Rain\Support\Facades\Flash;
 use Validator;
 use AjaxException;
 use Mail;
 use Redirect;
-class SimpleContact extends ComponentBase
+class Simplecontact extends ComponentBase
 {
    
     public function componentDetails()

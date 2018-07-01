@@ -4,14 +4,14 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Backend\Facades\Backend;
 use HolgerBaumann\SimpleContact\Classes\ZHelper;
-use HolgerBaumann\SimpleContact\Models\SimpleContact as SimpleContactModel;
+use HolgerBaumann\SimpleContact\Models\Simplecontact as SimplecontactModel;
 use October\Rain\Support\Facades\Flash;
 use Illuminate\Support\Facades\Redirect;
 use Mail;
 use Validator;
 use ValidationException;
 use System\Classes\SettingsManager;
-class SimpleContact extends Controller
+class Simplecontact extends Controller
 {
     public $requiredPermissions = ['holgerbaumann.simplecontact.inbox'];
     
@@ -24,9 +24,9 @@ class SimpleContact extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('HolgerBaumann.SimpleContact', 'main-menu-item');
+        BackendMenu::setContext('HolgerBaumann.Simplecontact', 'main-menu-item');
 
-        SettingsManager::setContext('HolgerBaumann.SimpleContact', 'simplecontact');
+        SettingsManager::setContext('HolgerBaumann.Simplecontact', 'simplecontact');
     }
 
 
@@ -50,7 +50,7 @@ class SimpleContact extends Controller
      */
     public static function countUnreadMessages()
     {
-        $counter = SimpleContactModel::where('is_new', true)->count();
+        $counter = SimplecontactModel::where('is_new', true)->count();
 
         if ($counter > 0)
             return $counter;
@@ -72,11 +72,11 @@ class SimpleContact extends Controller
 
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
-            SimpleContactModel::whereIn('id',$checkedIds)->delete();
+            SimplecontactModel::whereIn('id',$checkedIds)->delete();
 
         }
 
-        $counter = SimpleContactModel::where('is_new', true)->count();
+        $counter = SimplecontactModel::where('is_new', true)->count();
 
         return [
             'counter' => $counter,
@@ -93,7 +93,7 @@ class SimpleContact extends Controller
      */
     public function onDeleteSingle(){
         $id = post('id' );
-        $record = SimpleContactModel::find($id);
+        $record = SimplecontactModel::find($id);
 
         if($record){
 
@@ -125,7 +125,7 @@ class SimpleContact extends Controller
             throw new ValidationException($validator);
         }
 
-        $record = SimpleContactModel::find(post('id'));
+        $record = SimplecontactModel::find(post('id'));
 
         if($record){
 
@@ -158,7 +158,7 @@ class SimpleContact extends Controller
      * @param $id
      */
     public function view($id){
-        $message = SimpleContactModel::find($id);
+        $message = SimplecontactModel::find($id);
         if($message){
             $message->is_new = false;
             $message->save();

@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class SimpleContact extends Model
+class Simplecontact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 

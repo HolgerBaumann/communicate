@@ -9,7 +9,7 @@
 namespace HolgerBaumann\SimpleContact\ReportWidgets;
 
 use Backend\Classes\ReportWidgetBase;
-use HolgerBaumann\SimpleContact\Models\SimpleContact as simpleContactModel;
+use HolgerBaumann\SimpleContact\Models\Simplecontact as simpleContactModel;
 class MessageReport extends ReportWidgetBase
 {
 

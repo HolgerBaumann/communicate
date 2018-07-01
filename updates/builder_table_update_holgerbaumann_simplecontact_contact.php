@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableUpdateHolgerBaumannSimpleContactContact extends Migration
+class BuilderTableUpdateHolgerBaumannSimplecontactContact extends Migration
 {
     public function up()
     {
