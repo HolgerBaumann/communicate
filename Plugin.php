@@ -11,7 +11,7 @@ class Plugin extends PluginBase
 		return [
 			'name'        => 'holgerbaumann.simplecontact::lang.plugin.name',
 			'description' => 'holgerbaumann.simplecontact::lang.plugin.description',
-			'author'      => 'Jawad',
+			'author'      => 'Jawad, Holger Baumann',
 			'icon'        => 'icon-envelope'
 		];
 	}
