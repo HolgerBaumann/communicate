@@ -1,15 +1,15 @@
 plugin:
-    name: 'holgerbaumann.simplecontact::lang.plugin.name'
-    description: 'holgerbaumann.simplecontact::lang.plugin.description'
+    name: 'holgerbaumann.communicate::lang.plugin.name'
+    description: 'holgerbaumann.communicate::lang.plugin.description'
     author: HolgerBaumann
     icon: oc-icon-envelope
     homepage: ''
 permissions:
-    holgerbaumann.simplecontact.inbox:
-        tab: 'holgerbaumann.simplecontact::lang.simplecontact.permission'
-        label: 'holgerbaumann.simplecontact::lang.simplecontact.permission_messages'
-    holgerbaumann.simplecontact.manage_settings:
-        tab: 'holgerbaumann.simplecontact::lang.simplecontact.permission'
-        label: 'holgerbaumann.simplecontact::lang.simplecontact.permission_settings'
+    holgerbaumann.communicate.inbox:
+        tab: 'holgerbaumann.communicate::lang.communicate.permission'
+        label: 'holgerbaumann.communicate::lang.communicate.permission_messages'
+    holgerbaumann.communicate.manage_settings:
+        tab: 'holgerbaumann.communicate::lang.communicate.permission'
+        label: 'holgerbaumann.communicate::lang.communicate.permission_settings'
 
 

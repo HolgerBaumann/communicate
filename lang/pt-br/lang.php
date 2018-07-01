@@ -3,7 +3,7 @@
         'name' => 'Contato Simples',
         'description' => 'Um simples formulário de contato conosco',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'De',
         'subject' => 'Assunto',
         'name' => 'Nome',
@@ -31,7 +31,7 @@
 	'button_close_reply' => 'Fechar',
     ],
     'settings' => [
-        'section_contact_label' => 'Configurações',
+        'section_communicate_label' => 'Configurações',
         'redirect_label' => 'Redirecionar',
         'redirect_comment' => 'Habilitar redirecionamento de página após completar o envio do formuário',
         'redirect_url_label' => 'Selecione a Página de redirecionamento',

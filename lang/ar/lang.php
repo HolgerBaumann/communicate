@@ -1,9 +1,9 @@
 <?php return [
     'plugin' => [
-        'name' => 'Simple Contact',
-        'description' => 'A simple contact us Form',
+        'name' => 'Communicate',
+        'description' => 'A simple communicate us Form',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'المرسل',
         'subject' => 'الموضوع',
         'name' => 'الأسم',
@@ -12,7 +12,7 @@
         'date' => 'التاريخ',
         'mainmenu' => 'الرسالة',
         'submenu' => 'الوارد',
-        'permission' => 'Simple Contact',
+        'permission' => 'Communicate',
         'permission_messages' => 'الرسائل',
         'permission_settings' => 'الضبط',
         'phone' => 'الهاتف',
@@ -31,7 +31,7 @@
         'button_close_reply' => 'أغلق',
     ],
     'settings' => [
-        'section_contact_label' => 'الإعدادات',
+        'section_communicate_label' => 'الإعدادات',
         'redirect_label' => 'إعادة التوجيه',
         'redirect_comment' => 'تشغيل إعادة توجيه الصفحة بعد النجاح في عملية الإرسال',
         'redirect_url_label' => 'أختر صفحة إعاده التوجيه',
@@ -57,8 +57,8 @@
         'form_top_text_comment' => 'هذا النص سوف يظهر في أعلي النموزج',
     ],
     'component' => [
-        'name' => 'Simple Contact Form',
-        'description' => 'Add contact us form to page',
+        'name' => 'Communicate Form',
+        'description' => 'Add communicate us form to page',
         'name_title' => 'عنوان حقل الاسم',
         'name_description' => '(عنوان حقل الاسم سوف يظهر اعلى الحقل(مطلوب',
         'name_validation_message' => '',
@@ -82,7 +82,7 @@
         'button_validation_message' => '',
     ],
     'widget' => [
-        'label' => 'Contact Us Messages Overview',
+        'label' => 'Communicate Us Messages Overview',
         'properties_title' => 'Widget title',
         'properties_chart' => 'Chart Type',
         'properties_chart_option_bar' => 'Bar',

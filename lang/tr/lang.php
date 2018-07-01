@@ -1,9 +1,9 @@
 <?php return [
     'plugin' => [
-        'name' => 'Simple Contact',
+        'name' => 'Communicate',
         'description' => 'İletişim formu',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'From',
         'subject' => 'Konu',
         'name' => 'İsim Soyisim',
@@ -12,7 +12,7 @@
         'date' => 'Tarih',
         'mainmenu' => 'Mesajlar',
         'submenu' => 'Gelen kutusu',
-        'permission' => 'Simple Contact',
+        'permission' => 'Communicate',
         'permission_messages' => 'İletişim formu mesajları',
         'permission_settings' => 'İletişim formu ayarları',
         'phone' => 'Telefon',
@@ -31,7 +31,7 @@
         'button_close_reply' => 'Kapat',
     ],
     'settings' => [
-        'section_contact_label' => 'Ayarlar',
+        'section_communicate_label' => 'Ayarlar',
         'redirect_label' => 'Yönlendirme',
         'redirect_comment' => 'Başarılı gönderimler için sayfa yönlendirilmesi.',
         'redirect_url_label' => 'Yönelenecek sayfayı seçiniz',
@@ -57,7 +57,7 @@
         'form_top_text_comment' => 'Bu metin form üzerinde görüntülenecek.',
     ],
     'component' => [
-        'name' => 'Simple Contact Form',
+        'name' => 'Communicate Form',
         'description' => 'İletişim formu ekle',
         'name_title' => 'İsim başlığı',
         'name_description' => 'İsim soyidim üzerindeki metni (zorunlu alandır)',
@@ -82,7 +82,7 @@
         'button_validation_message' => '',
     ],
     'widget' => [
-        'label' => 'Simple Contact Form genel bilgileri',
+        'label' => 'Communicate Form genel bilgileri',
         'properties_title' => 'Widget başlığı',
         'properties_chart' => 'Grafik Türü',
         'properties_chart_option_bar' => 'Bar',

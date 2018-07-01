@@ -1,72 +1,72 @@
 fields:
 
     form_settings.section:
-            label: holgerbaumann.simplecontact::lang.settings.section_contact_label
+            label: holgerbaumann.communicate::lang.settings.section_communicate_label
             type: section
 
     redirect_to_page:
             span: left
-            label: holgerbaumann.simplecontact::lang.settings.redirect_label
-            commentAbove: holgerbaumann.simplecontact::lang.settings.redirect_comment
+            label: holgerbaumann.communicate::lang.settings.redirect_label
+            commentAbove: holgerbaumann.communicate::lang.settings.redirect_comment
             type: switch
     redirect_to_url:
                     span: right
-                    label: holgerbaumann.simplecontact::lang.settings.redirect_url_label
-                    commentAbove: holgerbaumann.simplecontact::lang.settings.redirect_url_comment
+                    label: holgerbaumann.communicate::lang.settings.redirect_url_label
+                    commentAbove: holgerbaumann.communicate::lang.settings.redirect_url_comment
                     type: dropdown
     success_message:
                   span: left
-                  label: holgerbaumann.simplecontact::lang.settings.success_message
-                  commentAbove: holgerbaumann.simplecontact::lang.settings.success_message_comment
+                  label: holgerbaumann.communicate::lang.settings.success_message
+                  commentAbove: holgerbaumann.communicate::lang.settings.success_message_comment
                   type: text
     text_top_form:
-                label: holgerbaumann.simplecontact::lang.settings.form_top_text_label
-                commentAbove: holgerbaumann.simplecontact::lang.settings.form_top_text_comment
+                label: holgerbaumann.communicate::lang.settings.form_top_text_label
+                commentAbove: holgerbaumann.communicate::lang.settings.form_top_text_comment
                 type: richeditor
                 size: giant
 
     form_mail_settings.section:
-                label: holgerbaumann.simplecontact::lang.settings.section_mail_label
+                label: holgerbaumann.communicate::lang.settings.section_mail_label
                 type: section
 
     recieve_notification:
           span: left
-          label: holgerbaumann.simplecontact::lang.settings.notification_label
-          commentAbove: holgerbaumann.simplecontact::lang.settings.notification_comment
+          label: holgerbaumann.communicate::lang.settings.notification_label
+          commentAbove: holgerbaumann.communicate::lang.settings.notification_comment
           type: switch
 
     auto_reply:
             span: right
-            label: holgerbaumann.simplecontact::lang.settings.auto_reply_label
-            commentAbove: holgerbaumann.simplecontact::lang.settings.auto_reply_comment
+            label: holgerbaumann.communicate::lang.settings.auto_reply_label
+            commentAbove: holgerbaumann.communicate::lang.settings.auto_reply_comment
             type: switch
 
     notification_email_address:
-             label: holgerbaumann.simplecontact::lang.settings.notification_email_address
-             commentAbove: holgerbaumann.simplecontact::lang.settings.notification_email_address_comment
+             label: holgerbaumann.communicate::lang.settings.notification_email_address
+             commentAbove: holgerbaumann.communicate::lang.settings.notification_email_address_comment
              span: left
              type: text
 
 
 
     recaptcha_settings.section:
-        label: holgerbaumann.simplecontact::lang.settings.section_recaptcha_label
+        label: holgerbaumann.communicate::lang.settings.section_recaptcha_label
         type: section
-        comment: holgerbaumann.simplecontact::lang.settings.section_recaptcha_comments
+        comment: holgerbaumann.communicate::lang.settings.section_recaptcha_comments
 
     recaptcha_enabled:
-        label: holgerbaumann.simplecontact::lang.settings.recaptcha_label
-        commentAbove: holgerbaumann.simplecontact::lang.settings.recaptcha_comment
+        label: holgerbaumann.communicate::lang.settings.recaptcha_label
+        commentAbove: holgerbaumann.communicate::lang.settings.recaptcha_comment
         type: switch
 
     site_key:
-        label: holgerbaumann.simplecontact::lang.settings.site_key_label
-        commentAbove: holgerbaumann.simplecontact::lang.settings.site_key_comment
+        label: holgerbaumann.communicate::lang.settings.site_key_label
+        commentAbove: holgerbaumann.communicate::lang.settings.site_key_comment
         span: left
         type: text
     secret_key:
-        label: holgerbaumann.simplecontact::lang.settings.secret_key_label
-        commentAbove: holgerbaumann.simplecontact::lang.settings.secret_key_comment
+        label: holgerbaumann.communicate::lang.settings.secret_key_label
+        commentAbove: holgerbaumann.communicate::lang.settings.secret_key_comment
         span: right
         type: text
 

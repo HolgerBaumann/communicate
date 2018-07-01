@@ -3,7 +3,7 @@
         'name' => '简单的联系表格',
         'description' => '一个简单的联系我们表格',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => '发自',
         'subject' => '主题',
         'name' => '姓名',
@@ -31,7 +31,7 @@
 	    'button_close_reply' => '关闭',
     ],
     'settings' => [
-        'section_contact_label' => 'Settings|设置',
+        'section_communicate_label' => 'Settings|设置',
         'redirect_label' => 'Redirect|重定向',
         'redirect_comment' => 'Enable redirect page after successful form submit|表格成功提交后（使能）重定向页面',
         'redirect_url_label' => 'Select Redirect Page|请选择重定向页面',
@@ -40,7 +40,7 @@
         'success_message_comment' => 'After successful form submit this success message will be displayed|表单提交后，如下（成功提交之）信息显示于此',
         'section_mail_label' => 'Mail Settings|邮件设置',
         'notification_label' => 'Notification|通知',
-        'notification_comment' => 'Send mail notification to you when contact form submitted|当联系表单提交后发送email通知给您',
+        'notification_comment' => 'Send mail notification to you when communicate form submitted|当联系表单提交后发送email通知给您',
         'notification_email_address' => 'Notification Email Address|邮件通知Email地址',
         'notification_email_address_comment' => 'Email adddress where notification mail will be sent|通知邮件发往的Email地址',
         'auto_reply_label' => 'Auto Reply|自动回复',
@@ -57,8 +57,8 @@
         'form_top_text_comment' => '下面这些文本将会显示在联系表单上面',
     ],
     'component' => [
-        'name' => 'Simple Contact Form|简单的联系表单',
-        'description' => 'Add contact us form to page|向页面增加一个联系我们的表单',
+        'name' => 'Communicate Form|简单的联系表单',
+        'description' => 'Add communicate us form to page|向页面增加一个联系我们的表单',
         'name_title' => '姓名标题',
         'email_title' => 'Email字段标题',
         'email_description' => 'Email label will appear above the field(required)|Email标签将显示在字段上部（此字段必须）',

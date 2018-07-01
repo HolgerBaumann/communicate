@@ -1,9 +1,9 @@
 <?php return [
     'plugin' => [
-        'name' => 'Simple Contact',
+        'name' => 'Communicate',
         'description' => 'Простая контактная форма',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'От',
         'subject' => 'Тема',
         'name' => 'Имя',
@@ -12,7 +12,7 @@
         'date' => 'Дата',
         'mainmenu' => 'Сообщения',
         'submenu' => 'Входящие',
-        'permission' => 'Simple Contact',
+        'permission' => 'Communicate',
         'permission_messages' => 'Сообщения',
         'permission_settings' => 'Настройки',
         'phone' => 'Телефон',
@@ -31,7 +31,7 @@
         'button_close_reply' => 'Отмена',
     ],
     'settings' => [
-        'section_contact_label' => 'Настройки',
+        'section_communicate_label' => 'Настройки',
         'redirect_label' => 'Редирект',
         'redirect_comment' => 'Включить редирект после отправки сообщения',
         'redirect_url_label' => 'Страница',
@@ -57,7 +57,7 @@
         'form_top_text_comment' => 'Этот текст будет сверху формы',
     ],
     'component' => [
-        'name' => 'Simple Contact Form',
+        'name' => 'Communicate Form',
         'description' => 'Добавить форму на страницу',
         'name_title' => 'Надпись для имени',
         'name_description' => 'Текст над полем для имени(обязательно)',
@@ -80,7 +80,7 @@
         'button_validation_message' => '',
     ],
     'widget' => [
-        'label' => 'Contact Us - Общий',
+        'label' => 'Communicate Us - Общий',
         'properties_title' => 'Заголовок виджета',
         'properties_chart' => 'Тип графика',
         'properties_chart_option_bar' => 'Bar',

@@ -1,17 +1,24 @@
-<?php namespace HolgerBaumann\SimpleContact;
+<?php namespace HolgerBaumann\Communicate;
 
-use System\Classes\PluginBase;
 use Backend;
-use HolgerBaumann\SimpleContact\Controllers\Simplecontact;
+use System\Classes\PluginBase;
+use HolgerBaumann\Communicate\Controllers\Communicate;
+/**
+ * Communicate Plugin Information File
+ */
 class Plugin extends PluginBase
 {
-
+    /**
+     * Returns information about this plugin.
+     *
+     * @return array
+     */
 	public function pluginDetails()
 	{
 		return [
-			'name'        => 'holgerbaumann.simplecontact::lang.plugin.name',
-			'description' => 'holgerbaumann.simplecontact::lang.plugin.description',
-			'author'      => 'Jawad, Holger Baumann',
+			'name'        => 'holgerbaumann.communicate::lang.plugin.name',
+			'description' => 'holgerbaumann.communicate::lang.plugin.description',
+			'author'      => 'Holger Baumann',
 			'icon'        => 'icon-envelope'
 		];
 	}
@@ -24,7 +31,7 @@ class Plugin extends PluginBase
 	public function registerComponents()
 	{
 		return [
-			'HolgerBaumann\SimpleContact\Components\Simplecontact' => 'simpleContact'
+			'HolgerBaumann\Communicate\Components\Communicate' => 'Communicate'
 		];
 	}
 
@@ -32,11 +39,11 @@ class Plugin extends PluginBase
 	{
 		return [
 			'config' => [
-				'label'       => 'Simple Contact',
+				'label'       => 'Communicate',
 				'icon'        => 'icon-envelope',
 				'description' => 'Manage Settings.',
-				'class'       => 'HolgerBaumann\SimpleContact\Models\Settings',
-				'permissions' => ['holgerbaumann.simplecontact.manage_settings'],
+				'class'       => 'HolgerBaumann\Communicate\Models\Settings',
+				'permissions' => ['holgerbaumann.communicate.manage_settings'],
 				'order'       => 60
 			]
 		];
@@ -45,19 +52,19 @@ class Plugin extends PluginBase
 	public function registerNavigation(){
 		return [
 			'main-menu-item' => [
-				'label'       => 'holgerbaumann.simplecontact::lang.simplecontact.mainmenu',
-				'url'         => Backend::url('holgerbaumann/simplecontact/simplecontact'),
+				'label'       => 'holgerbaumann.communicate::lang.communicate.mainmenu',
+				'url'         => Backend::url('holgerbaumann/communicate/communicate'),
 				'icon'        => 'icon-envelope',
-				'permissions' => ['holgerbaumann.simplecontact.inbox'],
+				'permissions' => ['holgerbaumann.communicate.inbox'],
 
 
 				'sideMenu' => [
 					'side-menu-item' => [
-						'label'       => 'holgerbaumann.simplecontact::lang.simplecontact.submenu',
+						'label'       => 'holgerbaumann.communicate::lang.communicate.submenu',
 						'icon'        => 'icon-inbox',
-						'url'         => Backend::url('holgerbaumann/simplecontact/simplecontact'),
-						'permissions' => ['holgerbaumann.simplecontact.inbox'],
-						'counter'     => Simplecontact::countUnreadMessages(),
+						'url'         => Backend::url('holgerbaumann/communicate/communicate'),
+						'permissions' => ['holgerbaumann.communicate.inbox'],
+						'counter'     => Communicate::countUnreadMessages(),
 						'counterLabel' => 'Un-Read Messages'
 					]
 
@@ -70,17 +77,17 @@ class Plugin extends PluginBase
 	public function registerMailTemplates()
 	{
 		return [
-			'holgerbaumann.simplecontact::mail.reply' => 'Simple Contact -- reply message',
-			'holgerbaumann.simplecontact::mail.auto-response' => 'Simple Contact -- auto response message',
-			'holgerbaumann.simplecontact::mail.notification' => 'Simple Contact -- notification mail',
+			'holgerbaumann.communicate::mail.reply' => 'Communicate -- reply message',
+			'holgerbaumann.communicate::mail.auto-response' => 'Communicate -- auto response message',
+			'holgerbaumann.communicate::mail.notification' => 'Communicate -- notification mail',
 		];
 	}
 
 	public function registerReportWidgets()
 	{
 		return [
-			'HolgerBaumann\SimpleContact\ReportWidgets\MessageReport' => [
-				'label'   => 'holgerbaumann.simplecontact::lang.widget.label',
+			'HolgerBaumann\Communicate\ReportWidgets\MessageReport' => [
+				'label'   => 'holgerbaumann.communicate::lang.widget.label',
 				'context' => 'dashboard'
 			],
 		];

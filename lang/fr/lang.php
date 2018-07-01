@@ -1,9 +1,9 @@
 <?php return [
     'plugin' => [
-        'name' => 'Simple Contact',
-        'description' => 'A simple contact us Form',
+        'name' => 'Communicate',
+        'description' => 'A simple communicate us Form',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'De',
         'subject' => 'Sujet',
         'name' => 'Nom',
@@ -12,7 +12,7 @@
         'date' => 'Date',
         'mainmenu' => 'Messages',
         'submenu' => 'Boîte de réception',
-        'permission' => 'Simple Contact',
+        'permission' => 'Communicate',
         'permission_messages' => 'Messages',
         'permission_settings' => 'Paramètres',
         'phone' => 'Téléphone',
@@ -31,7 +31,7 @@
         'button_close_reply' => 'Fermer',
     ],
     'settings' => [
-        'section_contact_label' => 'Paramètres',
+        'section_communicate_label' => 'Paramètres',
         'redirect_label' => 'Redirection',
         'redirect_comment' => 'Activer la redirection vers une page après la soumission du formulaire.',
         'redirect_url_label' => 'Choiri la page de redirection.',
@@ -40,13 +40,13 @@
         'success_message_comment' => 'Après la soumission réussie du formulaire, le message suivant sera affiché',
         'section_mail_label' => 'Paramètres de messagerie',
         'notification_label' => 'Notification',
-        'notification_comment' => 'Envoyer une notification par courriel lorsque le formulaire de contact est soumis',
+        'notification_comment' => 'Envoyer une notification par courriel lorsque le formulaire de communicate est soumis',
         'notification_email_address' => 'Courriel de notification',
         'notification_email_address_comment' => 'L\'adresse courriel où les notifications courriels seront expédiées.',
         'auto_reply_label' => 'Réponse automatique',
-        'auto_reply_comment' => 'Envoyer une réponse automatique à l\'utilisateur qui a soumis le formulaire de contact.',
+        'auto_reply_comment' => 'Envoyer une réponse automatique à l\'utilisateur qui a soumis le formulaire de communicate.',
         'section_recaptcha_label' => 'Paramètres reCAPTCHA',
-        'section_recaptcha_comments' => 'Afficher ou cacher le reCAPTCHA dans le formulaire de contact',
+        'section_recaptcha_comments' => 'Afficher ou cacher le reCAPTCHA dans le formulaire de communicate',
         'recaptcha_label' => 'reCAPTCHA',
         'recaptcha_comment' => 'Afficher le widget reCAPTCHA dans le formulaire',
         'site_key_label' => 'Clé de site',
@@ -57,8 +57,8 @@
         'form_top_text_comment' => 'Ce texte s\'affichera au-dessus du formulaire',
     ],
     'component' => [
-        'name' => 'Simple Contact Form',
-        'description' => 'Ajouter un formulaire de contact à la page',
+        'name' => 'Communicate Form',
+        'description' => 'Ajouter un formulaire de communicate à la page',
         'name_title' => 'Étiquette du champ Nom (Name)',
         'name_description' => 'L\'étiquette du champ Nom (Name) s\'affichera au-dessus du champ (requis)',
         'name_validation_message' => '',
@@ -82,7 +82,7 @@
         'button_validation_message' => '',
     ],
     'widget' => [
-        'label' => 'Vue d\'ensemble des message de contact',
+        'label' => 'Vue d\'ensemble des message de communicate',
         'properties_title' => 'titre du Widget',
         'properties_chart' => 'Type de graphique',
         'properties_chart_option_bar' => 'Diagramme à bandes',

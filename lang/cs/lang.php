@@ -1,9 +1,9 @@
 <?php return [
     'plugin' => [
-        'name' => 'Simple Contact',
+        'name' => 'Communicate',
         'description' => 'Jednoduchý kontaktní formulář',
     ],
-    'simplecontact' => [
+    'communicate' => [
         'from' => 'Od',
         'subject' => 'Předmět',
         'name' => 'Jméno',
@@ -12,7 +12,7 @@
         'date' => 'Datum',
         'mainmenu' => 'Zpráva',
         'submenu' => 'Doručená pošta',
-        'permission' => 'Simple Contact',
+        'permission' => 'Communicate',
         'permission_messages' => 'Zpráva',
         'permission_settings' => 'Nastavení',
         'phone' => 'Telefon',
@@ -31,7 +31,7 @@
         'button_close_reply' => 'Zavřít',
     ],
     'settings' => [
-        'section_contact_label' => 'Nastavení',
+        'section_communicate_label' => 'Nastavení',
         'redirect_label' => 'Přesměrování',
         'redirect_comment' => 'Přesměrovat po úspěšném odeslání na stránku',
         'redirect_url_label' => 'Vyberte stránku na kterou přesměrovat',

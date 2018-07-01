@@ -6,10 +6,10 @@
  * Time: 1:15 PM
  */
 
-namespace HolgerBaumann\SimpleContact\ReportWidgets;
+namespace HolgerBaumann\Communicate\ReportWidgets;
 
 use Backend\Classes\ReportWidgetBase;
-use HolgerBaumann\SimpleContact\Models\Simplecontact as simpleContactModel;
+use HolgerBaumann\Communicate\Models\Communicate as CommunicateModel;
 class MessageReport extends ReportWidgetBase
 {
 
@@ -17,17 +17,17 @@ class MessageReport extends ReportWidgetBase
     {
         return [
             'title' => [
-                'title'             => 'holgerbaumann.simplecontact::lang.widget.properties_title',
-                'default'           => 'Contact Us Messages',
+                'title'             => 'holgerbaumann.communicate::lang.widget.properties_title',
+                'default'           => 'Communicate Us Messages',
                 'type'              => 'string',
             ],
             'chart' => [
-                'title' => 'holgerbaumann.simplecontact::lang.widget.properties_chart',
+                'title' => 'holgerbaumann.communicate::lang.widget.properties_chart',
                 'type'        => 'dropdown',
                 'default'     => 'chart-bar',
                 'options'     => [
-                    'chart-bar'=> e(trans('holgerbaumann.simplecontact::lang.widget.properties_chart_option_bar')),
-                    'chart-pie'=> e(trans('holgerbaumann.simplecontact::lang.widget.properties_chart_option_pie'))
+                    'chart-bar'=> e(trans('holgerbaumann.communicate::lang.widget.properties_chart_option_bar')),
+                    'chart-pie'=> e(trans('holgerbaumann.communicate::lang.widget.properties_chart_option_pie'))
                 ]
             
             ]
@@ -37,11 +37,11 @@ class MessageReport extends ReportWidgetBase
     public function render()
     {
         $vars = [
-            'title' => $this->property('title','Contact Us Messages'),
+            'title' => $this->property('title','Communicate Us Messages'),
             'chart_type' => $this->property('chart', "chart-bar"),
-            'new_messages' => simpleContactModel::where('is_new', true)->count(),
-            'replied_messages' => simpleContactModel::where('is_replied', true)->count(),
-            'total_messages' => simpleContactModel::count()
+            'new_messages' => CommunicateModel::where('is_new', true)->count(),
+            'replied_messages' => CommunicateModel::where('is_replied', true)->count(),
+            'total_messages' => CommunicateModel::count()
         ];
         
         return $this->makePartial('widget',$vars);

@@ -1,11 +1,11 @@
 1.0.1:
     - 'Initialize plugin.'
 1.0.2:
-    - 'Created table holgerbaumann_simplecontact_contact'
-    - builder_table_create_holgerbaumann_simplecontact_contact.php
+    - 'Created table holgerbaumann_communicate'
+    - builder_table_create_holgerbaumann_communicate.php
 1.0.3:
-    - 'Updated table holgerbaumann_simplecontact_contact'
-    - builder_table_update_holgerbaumann_simplecontact_contact.php
+    - 'Updated table holgerbaumann_communicate'
+    - builder_table_update_holgerbaumann_communicate.php
 1.0.4:
     - 'Change Alias bug fixed'
 1.0.5:

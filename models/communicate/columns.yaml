@@ -1,0 +1,29 @@
+columns:
+    name:
+        label: 'holgerbaumann.communicate::lang.communicate.from'
+        type: partial
+        path: ~/plugins/holgerbaumann/communicate/models/communicate/_name_col.htm
+        searchable: true
+        sortable: true
+    subject:
+        label: 'holgerbaumann.communicate::lang.communicate.subject'
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: 'holgerbaumann.communicate::lang.communicate.email'
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: 'holgerbaumann.communicate::lang.communicate.phone'
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    created_at:
+        label: 'holgerbaumann.communicate::lang.communicate.date'
+        type: date
+        searchable: true
+        sortable: true
+

@@ -1,12 +1,12 @@
 
     $(window).on('ajaxBeforeSend', function() {
-        $('#simpleContactSubmitButton').prop('disabled',true);
+        $('#CommunicateSubmitButton').prop('disabled',true);
     });
     $(window).on('ajaxUpdateComplete', function() {
-        $('#simpleContactSubmitButton').prop('disabled',false);
+        $('#CommunicateSubmitButton').prop('disabled',false);
     });
-    $('#simpleContactForm').on('ajaxSuccess', function() {
-        document.getElementById('simpleContactForm').reset();
+    $('#CommunicateForm').on('ajaxSuccess', function() {
+        document.getElementById('CommunicateForm').reset();
         
         if(typeof grecaptcha != "undefined")
             grecaptcha.reset();
