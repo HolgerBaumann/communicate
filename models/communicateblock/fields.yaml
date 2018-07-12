@@ -1,0 +1,492 @@
+tabs:
+  fields:
+      form_title:
+          label: Title
+          oc.commentPosition: ''
+          span: auto
+          required: 1
+          type: text
+          comment: '(Wird je nach Formdesign angezeigt, bildet die eindeutige ID)'
+          tab: Blockeigenschaften
+      block_id:
+          label: 'holgerbaumann.communicate::lang.plugin.block_id'
+          span: auto
+          required: 1
+          preset:
+              field: title
+              type: slug
+          type: text
+          comment: '(für Sprungmarken)'
+          tab: Blockeigenschaften
+      info_title:
+          label: 'Info Titel'
+          oc.commentPosition: ''
+          span: auto
+          type: text
+          comment: '(Wird je nach Formdesign angezeigt)'
+          tab: Blockeigenschaften
+      section99:
+          span: full
+          type: section
+          tab: Blockeigenschaften
+      address_data:
+          label: 'Adressdaten'
+          span: full
+          size: large
+          oc.commentPosition: ''
+          required: 1
+          type: richeditor
+          tab: Blockeigenschaften
+      phone_data:
+          label: 'Telefondaten'
+          span: auto
+          size: large
+          oc.commentPosition: ''
+          type: richeditor
+          tab: Blockeigenschaften
+      email_data:
+          label: 'Emaildaten'
+          span: auto
+          size: large
+          oc.commentPosition: ''
+          required: 1
+          type: richeditor
+          tab: Blockeigenschaften
+
+      map_long:
+          label: Longitude
+          oc.commentPosition: ''
+          span: auto
+          type: text
+          comment: '(Bitte ohne Leerstellen eingeben)'
+          tab: Map
+      map_lat:
+          label: Latitude
+          oc.commentPosition: ''
+          span: auto
+          type: text
+          comment: '(Bitte ohne Leerstellen eingeben)'
+          tab: Map
+      map_zoom:
+          label: Zoom
+          oc.commentPosition: ''
+          options: getZoomValues
+          span: auto
+          default: '14'
+          type: dropdown
+          tab: Map
+      api_key:
+          label: 'API Key'
+          oc.commentPosition: ''
+          span: auto
+          type: text
+          comment: '(Notwendig, wenn Karte angezeigt werden soll!)'
+          tab: Map
+      marker_title:
+          label: 'Marker Titel'
+          oc.commentPosition: ''
+          span: full
+          type: text
+          tab: Map
+      marker_description:
+          label: 'Marker Beschreibung'
+          span: full
+          size: large
+          oc.commentPosition: ''
+          required: 1
+          type: richeditor
+          comment: '(Links zur Zeit nicht unterstützt)'
+          tab: Map
+      background_color:
+          label: 'holgerbaumann.communicate::lang.plugin.background_color'
+          oc.commentPosition: ''
+          options: getBackgroundColors
+          span: auto
+          default: 'transparent'
+          type: dropdown
+          tab: Hintergrund
+      background_color_override:
+          label: 'holgerbaumann.communicate::lang.plugin.background_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: Hintergrund
+      use_background_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: Hintergrund
+      background_margin_top:
+         label: 'Abstand oben'
+         oc.commentPosition: ''
+         options: getMarginPaddingValues
+         span: auto
+         default: '20px'
+         type: dropdown
+         tab: Hintergrund
+      background_margin_bottom:
+         label: 'Abstand unten'
+         oc.commentPosition: ''
+         options: getMarginPaddingValues
+         span: auto
+         default: '20px'
+         type: dropdown
+         tab: Hintergrund
+      background_padding_top:
+         label: 'Puffer oben'
+         oc.commentPosition: ''
+         options: getMarginPaddingValues
+         span: auto
+         default: '20px'
+         type: dropdown
+         tab: Hintergrund
+      background_padding_bottom:
+         label: 'Puffer unten'
+         oc.commentPosition: ''
+         options: getMarginPaddingValues
+         span: auto
+         default: '20px'
+         type: dropdown
+         tab: Hintergrund
+      section:
+          span: full
+          type: section
+          tab: 'Schriftfarben -und größen'
+      title_color:
+          label: 'holgerbaumann.communicate::lang.plugin.title_color'
+          oc.commentPosition: ''
+          options: getTextColors
+          span: auto
+          default: 'holgerbaumann-dark-text'
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      title_color_override:
+          label: 'holgerbaumann.communicate::lang.plugin.title_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Schriftfarben -und größen'
+      use_title_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      title_font_size:
+          label: 'Schriftgröße für Titel'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontSizes
+          default: 12px
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      title_font_weight:
+          label: 'Schriftstil für Titel'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontWeights
+          default: 300
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      section2:
+          span: full
+          type: section
+          tab: 'Schriftfarben -und größen'
+
+      icon_color:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_icon_color'
+          oc.commentPosition: ''
+          options: getTextColors
+          span: auto
+          default: 'holgerbaumann-dark-text'
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      icon_color_override:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_icon_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Schriftfarben -und größen'
+      use_icon_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      icon_font_size:
+          label: 'Schriftgröße für Subtitel'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontSizes
+          default: 12px
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      icon_font_weight:
+          label: 'Schriftstil für Subtitel'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontWeights
+          default: 300
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      section03:
+          span: full
+          type: section
+          tab: 'Schriftfarben -und größen'
+          comment: '(Betrifft nur Icons bei Infodaten (Adresse, etc.)!)'
+          
+      data_color:
+          label: 'holgerbaumann.communicate::lang.plugin.data_color'
+          oc.commentPosition: ''
+          options: getTextColors
+          span: auto
+          default: 'holgerbaumann-dark-text'
+          type: dropdown
+          tab: 'Schriftfarben -und größen'                
+      data_color_override:
+          label: 'holgerbaumann.communicate::lang.plugin.data_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Schriftfarben -und größen'
+      use_data_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      data_font_size:
+          label: 'Schriftgröße für Beschreibung'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontSizes
+          default: 12px
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      data_font_weight:
+          label: 'Schriftstil für Beschreibung'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontWeights
+          default: 300
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      section03:
+          span: full
+          type: section
+          tab: 'Schriftfarben -und größen'
+      icon_color:
+          label: 'holgerbaumann.communicate::lang.plugin.icon_color'
+          oc.commentPosition: ''
+          options: getTextColors
+          span: auto
+          default: 'holgerbaumann-dark-text'
+          type: dropdown
+          tab: 'Schriftfarben -und größen'                
+      icon_color_override:
+          label: 'holgerbaumann.communicate::lang.plugin.icon_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Schriftfarben -und größen'
+      use_icon_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      icon_font_size:
+          label: 'Schriftgröße für Beschreibung'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontSizes
+          default: 12px
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+      icon_font_weight:
+          label: 'Schriftstil für Beschreibung'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontWeights
+          default: 300
+          type: dropdown
+          tab: 'Schriftfarben -und größen'
+          
+      button_color:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_color'
+          oc.commentPosition: ''
+          options: getTextColors
+          span: auto
+          default: 'holgerbaumann-light-text'
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      button_color_override:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Button - Farben und -größen'
+      use_button_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      section04:
+          span: full
+          type: section
+          tab: 'Button - Farben und -größen'
+      button_font_size:
+          label: 'Schriftgröße für Button'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontSizes
+          default: 12px
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      button_font_weight:
+          label: 'Schriftstil für Button'
+          span: auto
+          oc.commentPosition: ''
+          options: getFontWeights
+          default: 300
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      section05:
+          span: full
+          type: section
+          tab: 'Button - Farben und -größen'
+      button_background_color:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_background_color'
+          oc.commentPosition: ''
+          options: getBackgroundColors
+          span: auto
+          default: 'holgerbaumann-dark'
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      button_background_color_override:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_background_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Button - Farben und -größen'
+      use_button_background_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      section06:
+          span: full
+          type: section
+          tab: 'Button - Farben und -größen'
+      button_border_color:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_border_color'
+          oc.commentPosition: ''
+          options: getBorderColors
+          span: auto
+          default: 'holgerbaumann-blue-border'
+          type: dropdown
+          tab: 'Button - Farben und -größen'
+      button_border_color_override:
+          label: 'holgerbaumann.complex::lang.plugin.standard_for_button_border_color_override'
+          oc.commentPosition: ''
+          availableColors:
+              - '#f2f2f2'
+              - '#e2e2e2'
+              - '#d4d4d4'
+              - '#376ef5'
+              - '#666666'
+          span: auto
+          default: ' '
+          type: colorpicker
+          tab: 'Button - Farben und -größen'
+      use_button_border_color_override:
+          label: 'Use Override'
+          oc.commentPosition: ''
+          options:
+              0: 'no'
+              1: 'yes'
+          default: 0
+          span: full
+          type: dropdown
+          tab: 'Button - Farben und -größen'            
+          

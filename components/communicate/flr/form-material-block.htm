@@ -1,0 +1,99 @@
+<div class="col-md-8 col-xl-9 flr-form">
+    <form id="simpleContactForm" data-request="{{ __SELF__ }}::onFormSubmit">
+
+        {{ form_token() }}
+        {{ form_session_key() }}
+        <div id="simple_contact_flash_message"></div>
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div class="md-form">
+                    <input type="text" id="name" name="name" class="form-control">
+                    <label for="name">{{__SELF__.languageProperties.namePlaceholder}}</label>
+                    <!--<span data-validate-for="name" class="contact-validate-error_message">{{__SELF__.languageProperties.nameError}}</span>-->
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div class="md-form">
+                    <input type="email" id="email" name="email" class="form-control">
+                    <label for="email">{{__SELF__.languageProperties.emailPlaceholder}}</label>
+                    <!--<span data-validate-for="email" class="contact-validate-error_message">{{__SELF__.languageProperties.emailError}}</span>-->
+                </div>
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            {% if(__SELF__.languageProperties.phoneEnabled) %}
+            <div class="col-md-6">
+
+                <div class="md-form">
+                    <input type="text" id="phone" name="phone" class="form-control">
+                    <label for="phone">{{__SELF__.languageProperties.phonePlaceholder}}</label>
+                    <!--<span data-validate-for="phone" class="contact-validate-error_message">{{__SELF__.languageProperties.phoneError}}</span>-->
+                </div>
+
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div class="md-form">
+                    <input type="text" id="subject" name="subject" class="form-control">
+                    <label for="subject">{{__SELF__.languageProperties.subjectPlaceholder}}</label>
+                    <!--<span data-validate-for="subject" class="contact-validate-error_message">{{__SELF__.languageProperties.subjectError}}</span>-->
+                </div>
+            </div>
+            <!--Grid column-->
+            {% else %}
+            <!--Grid column-->
+            <div class="col-md-12">
+                <div class="md-form">
+                    <input type="text" id="subject" name="subject" class="form-control">
+                    <label for="subject">{{__SELF__.languageProperties.subjectPlaceholder}}</label>
+                    <!--<span data-validate-for="subject" class="contact-validate-error_message">{{__SELF__.languageProperties.subjectError}}</span>-->
+                </div>
+            </div>
+            <!--Grid column-->
+            {% endif %}
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+
+                <div class="md-form">
+                    <textarea id="message" name="message" class="form-control md-textarea" rows="3"></textarea>
+                    <label for="message">{{__SELF__.languageProperties.messagePlaceholder}}</label>
+                    <!--<div data-validate-for="message" class="contact-validate-error_message">{{__SELF__.languageProperties.messageError}}</div>-->
+                </div>
+
+            </div>
+        </div>
+        <!--Grid row-->
+
+        <div class="text-center text-md-left">
+            <!-- Injecting reCaptcha if enabled -->
+            {% if(__SELF__.settings.recaptcha_enabled) %}
+            <div class="form-group">
+                <label for="message"></label>
+                <div class="g-recaptcha" data-sitekey="{{__SELF__.settings.recaptcha_site_key}}"></div>
+            </div>
+            {% endif %}
+            <!-- End reCaptcha -->
+            {% partial __SELF__ ~ '::partials/submit-button' %}
+        </div>
+    </form>
+    <div class="clearfix"></div>
+</div>

@@ -1,0 +1,83 @@
+<div class="col-lg-5 mb-4">
+    <!--Form with header-->
+    <div class="card">
+        <div class="card-body mlr-form">
+            <!--Header-->
+            <div class="form-header {{__SELF__.result.form_header_background_color}}"
+                 style="{% if __SELF__.result.form_header_padding %}padding: {{ __SELF__.result.form_header_padding }} !important;{% endif %}">
+                <h5 class="cph {{__SELF__.result.title_color}}"
+                    style="margin-top:20px;{% if __SELF__.result.use_title_color_override %}color: {{ __SELF__.result.title_color_override }} !important;{% endif %}{% if __SELF__.result.title_font_size %}font-size: {{ __SELF__.result.title_font_size }} !important;{% endif %}{% if __SELF__.result.title_font_weight %}font-weight: {{ __SELF__.result.title_font_weight }} !important;{% endif %}">
+                    <i class="fa fa-envelope"></i> {{__SELF__.result.form_title}}
+                </h5>
+            </div>
+            <form id="simpleContactForm" data-request="{{ __SELF__ }}::onFormSubmit">
+                {{ form_token() }}
+                {{ form_session_key() }}
+
+                <div id="simple_contact_flash_message"></div>
+            <!--Body-->
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="name" name="name" class="form-control">
+                    <label for="name">{{__SELF__.languageProperties.namePlaceholder}}</label>
+                    <!--<span data-validate-for="name" class="contact-validate-error_message">{{__SELF__.languageProperties.nameError}}</span>-->
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="email" name="email" class="form-control">
+                    <label for="email">{{__SELF__.languageProperties.emailPlaceholder}}</label>
+                    <!--<span data-validate-for="email" class="contact-validate-error_message">{{__SELF__.languageProperties.emailError}}</span>-->
+                </div>
+
+                {% if(__SELF__.languageProperties.phoneEnabled) %}
+                <div class="md-form">
+                    <i class="fa fa-phone prefix grey-text"></i>
+                    <input type="text" id="phone" name="phone" class="form-control">
+                    <label for="phone">{{__SELF__.languageProperties.phonePlaceholder}}</label>
+                    <!--<span data-validate-for="phone" class="contact-validate-error_message">{{__SELF__.languageProperties.phoneError}}</span>-->
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-question prefix grey-text"></i>
+                    <input type="text" id="subject" name="subject" class="form-control">
+                    <label for="subject">{{__SELF__.languageProperties.subjectPlaceholder}}</label>
+                    <!--<span data-validate-for="subject" class="contact-validate-error_message">{{__SELF__.languageProperties.subjectError}}</span>-->
+                </div>
+                {% else %}
+                <div class="md-form">
+                    <i class="fa fa-question prefix grey-text"></i>
+                    <input type="text" id="subject" name="subject" class="form-control">
+                    <label for="subject">{{__SELF__.languageProperties.subjectPlaceholder}}</label>
+                    <!--<span data-validate-for="subject" class="contact-validate-error_message">{{__SELF__.languageProperties.subjectError}}</span>-->
+                </div>
+                {% endif %}
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix grey-text"></i>
+                    <textarea id="message" name="message" class="form-control md-textarea" rows="3"></textarea>
+                    <label for="message">{{__SELF__.languageProperties.messagePlaceholder}}</label>
+                    <!--<div data-validate-for="message" class="contact-validate-error_message">{{__SELF__.languageProperties.messageError}}</div>-->
+                </div>
+
+                <div class="text-center">
+                       <!-- Injecting reCaptcha if enabled -->
+                    {% if(__SELF__.settings.recaptcha_enabled) %}
+                    <div class="md-form text-center">
+                        <label for="message"></label>
+                        <div class="g-recaptcha" data-sitekey="{{__SELF__.settings.recaptcha_site_key}}"></div>
+                        <style>
+                            .g-recaptcha div { margin-left: auto; margin-right: auto;}
+                        </style>
+                    </div>
+                    {% endif %}
+                    <!-- End reCaptcha -->
+                    {% partial __SELF__ ~ '::partials/submit-button' %}
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <!--Form with header-->
+
+</div>
