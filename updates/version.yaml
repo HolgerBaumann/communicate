@@ -29,9 +29,3 @@
     - 'Languages Added (Czech, Turkish)'
 2.0.3:
     - 'Language Added (French), fixed punctuation'
-2.0.4:
-    - 'Created table holgerbaumann_communicate_communicateblock'
-    - builder_table_create_holgerbaumann_communicate_communicateblock.php
-2.0.5:
-    - 'Created CommunicateblockTableSeeder'
-    - CommunicateblockTableSeeder.php

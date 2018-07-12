@@ -1,22 +1,22 @@
-<?php namespace HolgerBaumann\Communicate\Components;
+<?php namespace HolgerBaumann\SimpleContact\Components;
 
 use Backend\Facades\Backend;
 use Cms\Classes\ComponentBase;
-use HolgerBaumann\Communicate\Models\Settings;
-use HolgerBaumann\Communicate\Models\Communicate as CommunicateModel;
+use HolgerBaumann\SimpleContact\Models\Settings;
+use HolgerBaumann\SimpleContact\Models\Simplecontact as simpleContactModel;
 use October\Rain\Support\Facades\Flash;
 use Validator;
 use AjaxException;
 use Mail;
 use Redirect;
-class Communicate extends ComponentBase
+class Simplecontact extends ComponentBase
 {
    
     public function componentDetails()
     {
         return [
-            'name'        => 'holgerbaumann.communicate::lang.plugin.name',
-            'description' => 'holgerbaumann.communicate::lang.component.description',
+            'name'        => 'holgerbaumann.simplecontact::lang.plugin.name',
+            'description' => 'holgerbaumann.simplecontact::lang.component.description',
 
         ];
     }
@@ -25,31 +25,31 @@ class Communicate extends ComponentBase
     {
         return [
             'nameTitle' => [
-                'title' => 'holgerbaumann.communicate::lang.component.name_title',
-                'description' => 'holgerbaumann.communicate::lang.component.name_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.name_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.name_description',
                 'default' => 'Full Name',
                 'type' => 'string',
                 'required' => true,
                 'validationMessage' => 'Title label required'
             ],
             'emailTitle' => [
-                'title' => 'holgerbaumann.communicate::lang.component.email_title',
-                'description' => 'holgerbaumann.communicate::lang.component.email_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.email_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.email_description',
                 'default' => 'Email',
                 'type' => 'string',
                 'required' => true,
                 'validationMessage' => 'Email label required'
             ],
             'phoneTitle' => [
-                'title' => 'holgerbaumann.communicate::lang.component.phone_title',
-                'description' => 'holgerbaumann.communicate::lang.component.phone_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.phone_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.phone_description',
                 'default' => 'Phone',
                 'type' => 'string'
 
             ],
             'subjectTitle' => [
-                'title' => 'holgerbaumann.communicate::lang.component.subject_title',
-                'description' => 'holgerbaumann.communicate::lang.component.subject_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.subject_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.subject_description',
                 'default' => 'Subject',
                 'type' => 'string',
                 'required' => true,
@@ -57,8 +57,8 @@ class Communicate extends ComponentBase
 
             ],
             'messageTitle' => [
-                'title' => 'holgerbaumann.communicate::lang.component.message_title',
-                'description' => 'holgerbaumann.communicate::lang.component.message_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.message_title',
+                'description' => 'holgerbaumann.simplecontact::lang.component.message_description',
                 'default' => 'Message',
                 'type' => 'string',
                 'required' => true,
@@ -66,8 +66,8 @@ class Communicate extends ComponentBase
 
             ],
             'buttonText' => [
-                'title' => 'holgerbaumann.communicate::lang.component.button_text',
-                'description' => 'holgerbaumann.communicate::lang.component.button_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.button_text',
+                'description' => 'holgerbaumann.simplecontact::lang.component.button_description',
                 'default' => 'Submit',
                 'type' => 'string',
                 'required' => true,
@@ -75,14 +75,14 @@ class Communicate extends ComponentBase
 
             ],
             'displayPhone' => [
-                'title' => 'holgerbaumann.communicate::lang.component.display_phone_field',
-                'description' => 'holgerbaumann.communicate::lang.component.display_phone_field_description',
+                'title' => 'holgerbaumann.simplecontact::lang.component.display_phone_field',
+                'description' => 'holgerbaumann.simplecontact::lang.component.display_phone_field_description',
                 'default' => true,
                 'type' => 'checkbox',
             ],
             'detailedErrors' => [
-                'title'       => 'holgerbaumann.communicate::lang.component.detailed_errors_field',
-                'description' => 'holgerbaumann.communicate::lang.component.detailed_errors_field_description',
+                'title'       => 'holgerbaumann.simplecontact::lang.component.detailed_errors_field',
+                'description' => 'holgerbaumann.simplecontact::lang.component.detailed_errors_field_description',
                 'default'     => false,
                 'type'        => 'checkbox',
             ],
@@ -118,7 +118,7 @@ class Communicate extends ComponentBase
      */
     public function onRun()
     {
-        $this->addJs('/plugins/holgerbaumann/communicate/assets/js/Communicate-frontend.js');
+        $this->addJs('/plugins/holgerbaumann/simplecontact/assets/js/simpleContact-frontend.js');
         if(Settings::get('recaptcha_enabled', false))
             $this->addJs('https://www.google.com/recaptcha/api.js');
     }
@@ -132,11 +132,11 @@ class Communicate extends ComponentBase
          * Form validation
          */
         $customValidationMessages = [
-            'name.required' => trans('holgerbaumann.communicate::validation.custom.name.required'),
-            'email.required' => trans('holgerbaumann.communicate::validation.custom.email.required'),
-            'email.email' => trans('holgerbaumann.communicate::validation.custom.email.email'),
-            'subject.required' => trans('holgerbaumann.communicate::validation.custom.subject.required'),
-            'message.required' => trans('holgerbaumann.communicate::validation.custom.message.required'),
+            'name.required' => trans('holgerbaumann.simplecontact::validation.custom.name.required'),
+            'email.required' => trans('holgerbaumann.simplecontact::validation.custom.email.required'),
+            'email.email' => trans('holgerbaumann.simplecontact::validation.custom.email.email'),
+            'subject.required' => trans('holgerbaumann.simplecontact::validation.custom.subject.required'),
+            'message.required' => trans('holgerbaumann.simplecontact::validation.custom.message.required'),
         ];
         $formValidationRules = [
             'name' => 'required',
@@ -152,7 +152,7 @@ class Communicate extends ComponentBase
             $messages = $validator->messages();
             Flash::error($messages->first());
 
-            throw new AjaxException(['#simple_communicate_flash_message' => $this->renderPartial('@flashMessage.htm',[
+            throw new AjaxException(['#simple_contact_flash_message' => $this->renderPartial('@flashMessage.htm',[
                 'errors' => $messages->all()
             ])]);
         }
@@ -165,9 +165,9 @@ class Communicate extends ComponentBase
             $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".Settings::get('secret_key')."&response=".post('g-recaptcha-response')."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
             if($response['success'] == false)
             {
-                Flash::error(e(trans('holgerbaumann.communicate::validation.custom.reCAPTCHA.required')));
+                Flash::error(e(trans('holgerbaumann.simplecontact::validation.custom.reCAPTCHA.required')));
 
-                throw new AjaxException(['#simple_communicate_flash_message' => $this->renderPartial('@flashMessage.htm')]);
+                throw new AjaxException(['#simple_contact_flash_message' => $this->renderPartial('@flashMessage.htm')]);
             }
 
         }
@@ -185,8 +185,8 @@ class Communicate extends ComponentBase
         if(Settings::get('redirect_to_page',false) && !empty(Settings::get('redirect_to_url','')))
             return Redirect::to(Settings::get('redirect_to_url'));
         else{
-            Flash::success(Settings::get('success_message','Thankyou for communicateing us'));
-            return ['#simple_communicate_flash_message' => $this->renderPartial('@flashMessage.htm')];
+            Flash::success(Settings::get('success_message','Thankyou for contacting us'));
+            return ['#simple_contact_flash_message' => $this->renderPartial('@flashMessage.htm')];
         }
 
 
@@ -194,7 +194,7 @@ class Communicate extends ComponentBase
 
     protected function submitForm(){
 
-        $model = new CommunicateModel;
+        $model = new simpleContactModel;
 
         $model->name = post('name');
         $model->email = post('email');
@@ -219,7 +219,7 @@ class Communicate extends ComponentBase
      * Send notification email
      */
     protected function sendNotificationMail($message_id){
-        $url_message = Backend::url('holgerbaumann/communicate/communicate/view/'.$message_id);
+        $url_message = Backend::url('holgerbaumann/simplecontact/simplecontact/view/'.$message_id);
         $vars = [
             'url_message' => $url_message,
             'name' => post('name'),
@@ -229,7 +229,7 @@ class Communicate extends ComponentBase
             'message_body' => post('message')
         ];
 
-        Mail::send('holgerbaumann.communicate::mail.notification', $vars, function($message) use ($vars) {
+        Mail::send('holgerbaumann.simplecontact::mail.notification', $vars, function($message) use ($vars) {
              $message->to(Settings::get('notification_email_address'));
              $message->replyTo($vars['email'], $vars['name']);
         });
@@ -248,7 +248,7 @@ class Communicate extends ComponentBase
             'message_body' => post('message')
         ];
 
-        Mail::send('holgerbaumann.communicate::mail.auto-response', $vars, function($message) {
+        Mail::send('holgerbaumann.simplecontact::mail.auto-response', $vars, function($message) {
 
             $message->to(post('email'), post('name'));
 

@@ -1,4 +1,0 @@
-title: Communicateblock
-modelClass: HolgerBaumann\Communicate\Models\Communicateblock
-toolbar:
-    buttons: reorder_toolbar
