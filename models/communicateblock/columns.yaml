@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: ID
+        type: number
+        sortable: true
+    form_title:
+        label: 'holgerbaumann.communicate::lang.plugin.title'
+        type: text
+        searchable: true
+        sortable: true
+    block_id:
+        label: block_id
+        type: text
+    info_top_left:
+        label: info_top_left
+        type: partial
+        path: ~/plugins/holgerbaumann/communicate/models/custom_columns/_html_column.htm
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
