@@ -1,0 +1,18 @@
+<?php
+if(preg_match("/fa-/i", $record->icon)){
+?>
+
+<i class="<?php echo str_replace('fa fa','icon',$record->icon); ?>"
+   style="color:<?php echo $record->icon_color; ?>;font-size:<?php echo $record->icon_font_size; ?>" />
+
+<?php
+}else{
+?>
+"<?php echo $record->icon; ?>"
+/ Color: <div style="display:inline-block;height:10px;width:10px;background:<?php echo $record->icon_color; ?>"></div>
+/ Size: <?php echo $record->icon_font_size; ?><br />
+(Material Design Icon, only installed &amp; visible on Frontend)
+
+<?php
+}
+?>

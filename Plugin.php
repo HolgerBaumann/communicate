@@ -62,6 +62,12 @@ class Plugin extends PluginBase
 					'side-menu-item' => [
 						'label'       => 'holgerbaumann.communicate::lang.communicate.submenu',
 						'icon'        => 'icon-inbox',
+						'url'         => Backend::url('holgerbaumann/communicate/communicateblock'),
+						'permissions' => ['holgerbaumann.communicate.manage_settings']
+					],
+					'side-menu-item1' => [
+						'label'       => 'holgerbaumann.communicate::lang.communicate.submenu1',
+						'icon'        => 'icon-inbox',
 						'url'         => Backend::url('holgerbaumann/communicate/communicate'),
 						'permissions' => ['holgerbaumann.communicate.inbox'],
 						'counter'     => Communicate::countUnreadMessages(),
