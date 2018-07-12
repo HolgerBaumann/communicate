@@ -1,8 +1,8 @@
 {{ __SELF__.settings.text_top_form|raw}}
 
-<form id="CommunicateForm" data-request="{{ __SELF__ }}::onFormSubmit">
+<form id="simpleContactForm" data-request="{{ __SELF__ }}::onFormSubmit">
 
-    <div id="simple_communicate_flash_message"></div>
+    <div id="simple_contact_flash_message"></div>
 
 
     <div class="form-group">
@@ -41,7 +41,7 @@
     {% endif %}
     <!-- End reCaptcha -->
 
-    <button id="CommunicateSubmitButton"
+    <button id="simpleContactSubmitButton"
             type="submit" class="btn btn-default">
         {{__SELF__.properties.buttonText}}
     </button>

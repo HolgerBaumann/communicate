@@ -1,25 +1,8 @@
 <?php return [
     'plugin' => [
         'name' => 'Communicate',
-        'description' => 'A simple contact us Form',
-
-        'title' => ' Titel',
-        'block_id' => 'Eindeutige ID für diesen Block',
-        'background_color' => 'Hintergrundsfarbe',
-        'background_image' => 'Hintergrundsbild',
-        'title_color' => 'Farbe für Titel',
-        'subtitle_color' => 'Farbe für Subtitel',
-        'icon_color' => 'Farbe für Icon',
-        'description_color' => 'Farbe für Beschreibung',
-        'data_color' => 'Farbe für Daten',
-
-        'background_color_override' => 'Override Hintergrundsfarbe',
-        'title_color_override' => 'Override Farbe für Titel',
-        'icon_color_override' => 'Override Farbe für Icon',
-        'description_color_override' => 'Override Farbe für Beschreibung',
-        'data_color_override' => 'Override Farbe für Daten',
+        'description' => 'A simple communicate us Form',
     ],
-	
     'communicate' => [
         'from' => 'From',
         'subject' => 'Subject',
@@ -27,10 +10,9 @@
         'email' => 'Email',
         'status' => 'Status',
         'date' => 'Date',
-        'mainmenu' => 'Contact Forms Flnx',
-        'submenu' => 'Blocks',
-        'submenu1' => 'Inbox',
-        'permission' => 'Simple Contact',
+        'mainmenu' => 'Messages',
+        'submenu' => 'Inbox',
+        'permission' => 'Communicate',
         'permission_messages' => 'Messages',
         'permission_settings' => 'Settings',
         'phone' => 'Phone',
@@ -49,7 +31,7 @@
         'button_close_reply' => 'Close',
     ],
     'settings' => [
-        'section_contact_label' => 'Settings',
+        'section_communicate_label' => 'Settings',
         'redirect_label' => 'Redirect',
         'redirect_comment' => 'Enable redirect page after successful form submit',
         'redirect_url_label' => 'Select Redirect Page',
@@ -58,13 +40,13 @@
         'success_message_comment' => 'After successful form submit this success message will be displayed',
         'section_mail_label' => 'Mail Settings',
         'notification_label' => 'Notification',
-        'notification_comment' => 'Send mail notification to you when contact form submitted',
+        'notification_comment' => 'Send mail notification to you when communicate form submitted',
         'notification_email_address' => 'Notification Email Address',
         'notification_email_address_comment' => 'Email address where notification mail will be sent',
         'auto_reply_label' => 'Auto Reply',
-        'auto_reply_comment' => 'Send auto reply mail to user who submitted contact us form.',
+        'auto_reply_comment' => 'Send auto reply mail to user who submitted communicate us form.',
         'section_recaptcha_label' => 'reCAPTCHA Settings',
-        'section_recaptcha_comments' => 'Show or Hide reCAPTCHA on contact us form',
+        'section_recaptcha_comments' => 'Show or Hide reCAPTCHA on communicate us form',
         'recaptcha_label' => 'reCAPTCHA',
         'recaptcha_comment' => 'Display reCAPTCHA widget on the form',
         'site_key_label' => 'Site Key',
@@ -75,8 +57,8 @@
         'form_top_text_comment' => 'This text will appear on top of form ',
     ],
     'component' => [
-        'name' => 'Simple Contact Form',
-        'description' => 'Add contact us form to page',
+        'name' => 'Communicate Form',
+        'description' => 'Add communicate us form to page',
         'name_title' => 'Name field label',
         'name_description' => 'Name label will appear above the field(required)',
         'name_validation_message' => '',
@@ -100,7 +82,7 @@
         'button_validation_message' => '',
     ],
     'widget' => [
-        'label' => 'Contact Us Messages Overview',
+        'label' => 'Communicate Us Messages Overview',
         'properties_title' => 'Widget title',
         'properties_chart' => 'Chart Type',
         'properties_chart_option_bar' => 'Bar',
@@ -108,15 +90,5 @@
         'new' => 'New',
         'replied' => 'Replied',
         'total' => 'Total'
-    ],
-
-    'frontend' => [
-	    'name_placeholder' => 'Name',
-	    'email_placeholder' => 'Email',
-	    'subject_placeholder' => 'Subject',
-	    'phone_placeholder' => 'Phone',
-	    'message_placeholder' => 'Message',
-	    'success_message' => 'Thanks a lot for your message',
-	    'buttonText' => 'Submit',
     ]
 ];
